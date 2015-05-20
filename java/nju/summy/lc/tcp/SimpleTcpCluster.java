@@ -674,7 +674,7 @@ public class SimpleTcpCluster extends LifecycleMBeanBase
     	Member destmember = destmembers[0];
     	send(msg, destmember);
     	
-//        send(msg, null);
+//      send(msg, null);
     }
 
     /**
@@ -697,6 +697,7 @@ public class SimpleTcpCluster extends LifecycleMBeanBase
             if (dest != null) {
                 if (!getLocalMember().equals(dest)) {
                 	//@summy
+                	//LC only run "if" in this "if-else" sentence
                 	System.out.println("unicast");
                 	
                     channel.send(new Member[] {dest}, msg, sendOptions);
